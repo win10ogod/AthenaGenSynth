@@ -106,7 +106,7 @@ def main():
         output_file = create_output_file()
         save_to_file(output_file, generated_texts)
     else:
-        print("未生成任何文本")
+        print("No text was generated")
 
 if __name__ == "__main__":
     main()
