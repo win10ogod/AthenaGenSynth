@@ -44,18 +44,17 @@ def generate_data(model, prompts, images=None, options=None, system=None, templa
         
         response = requests.post(url, json=payload)
         
-        print(f"API 響應狀態碼: {response.status_code}")
-        print(f"API 響應內容: {response.text}")
-        
+        print(f"API response status code: {response.status_code}")
+        print(f"API response content: {response.text}")        
         if response.status_code == 200:
             data = response.json()
             if isinstance(data, dict) and "response" in data:
                 generated_text = data["response"]
                 generated_texts.append(generated_text)
             else:
-                print("API 響應格式不正確")
+                print("API response format is not correct")
         else:
-            print(f"請求失敗,狀態碼: {response.status_code}")
+            print(f"Request failed, status code: {response.status_code}")
     
     return generated_texts
 
@@ -74,9 +73,9 @@ def save_to_file(file_path, texts):
         with open(file_path, 'w') as file:
             for text in texts:
                 file.write(f"{text}\n")
-        print(f"生成的文本已保存到 {file_path}")
+        print(f"Generated text saved to {file_path}")
     except IOError as e:
-        print(f"保存文件時出錯: {e}")
+        print(f"Error saving file: {e}")
 
 def create_output_file():
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -84,21 +83,21 @@ def create_output_file():
     return file_name
 
 def main():
-    model = input("請輸入模型名稱: ")
-    prompt_type = input("請選擇提示類型 (1-輸入提示, 2-從文件載入提示): ")
+    model = input("Please enter the model name: ")
+    prompt_type = input("Please select prompt type (1-Input prompt, 2-Load prompt from file): ")
     
     if prompt_type == "1":
         prompts = []
         while True:
-            prompt = input("請輸入提示 (輸入 'done' 完成): ")
+            prompt = input("Please enter a prompt (enter 'done' to end): ")
             if prompt.lower() == 'done':
                 break
             prompts.append(prompt)
     elif prompt_type == "2":
-        file_path = input("請輸入文件路徑: ")
+        file_path = input("Please input file path: ")
         prompts = load_prompts_from_file(file_path)
     else:
-        print("無效的選擇")
+        print("Invalid selection")
         return
     
     generated_texts = generate_data(model, prompts)
