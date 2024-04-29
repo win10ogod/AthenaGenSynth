@@ -1,5 +1,7 @@
 \[ English | [中文](README-CN.md) \]
 
+吉祥物(image.png)。
+
 #AthenaGen
 Generate data using OLLAMA
 and use a simple script to create a pre-training data set
