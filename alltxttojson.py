@@ -4,18 +4,19 @@ import multiprocessing
 from tqdm import tqdm
 import json
 
+data="./cleaned3/"
 def process_files(file_list):
      all_text = []
      for filename in file_list:
-         with open('./cleaned3/'+filename, encoding='utf-8') as f:
+         with open(data + filename, encoding='utf-8') as f:
              lines = f.read()
              lines = lines.split('\n') # 以換行符號分割文本
              text = '\n'.join(f"{i + 1}:{line}" for i, line in enumerate(lines) if line.strip()) # 新增行號
-         all_text.append({"text": text})
+         all_text.append({"text": text},)
      return all_text
 
 if __name__ == '__main__':
-     lst = os.listdir('./cleaned3')
+     lst = os.listdir(data)
      random.shuffle(lst)
      num = len(lst)
      cnt = 1
