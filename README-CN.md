@@ -1,4 +1,8 @@
 \[ 中文 | [English](README.md) \]
+
+![image](image.png)。
+
+
 # AthenaGen
 使用 OLLAMA 產生數據
 並使用簡單的腳本建立預訓練數據集
