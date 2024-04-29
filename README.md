@@ -1,6 +1,6 @@
 \[ English | [中文](README-CN.md) \]
 
-吉祥物(image.png)。
+![image](image.png)。
 
 #AthenaGen
 Generate data using OLLAMA
