@@ -1,3 +1,4 @@
+\[ 中文 | [English](README.md) \]
 # AthenaGen
 使用 OLLAMA 產生數據
 
