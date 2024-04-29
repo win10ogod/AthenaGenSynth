@@ -1,3 +1,4 @@
+\[ English | [中文](README-CN.md) \]
 # AthenaGen
 Generate your data using OLLAMA
 # How to use
