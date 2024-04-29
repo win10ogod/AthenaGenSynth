@@ -13,7 +13,13 @@
 輸入提示，輸入done結束手動輸入提示，或在txt檔案中每行放置一個提示。
 # alltxttojson.py
 修改data=""
+
 例如:
+
 txt存放在./cleaned3
+
 data="./cleaned3"
+
 運行 python alltxttojson.py
+
+就會得到data{}.json文件
