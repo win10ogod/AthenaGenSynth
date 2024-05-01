@@ -14,10 +14,8 @@ def generate_data(model, prompts, images=None, options=None, system=None, templa
             "model": model,
             "prompt": prompt,
             "stream": stream,
-            "options": {
             "top_p": 0.9,
             "temperature":0.7,
-            },
             "max_ctx":32768,
             "done":done,
             "raw": raw,
