@@ -10,18 +10,18 @@ def generate_data(model, prompts, images=None, options=None, system=None, templa
      generated_texts = []
     
      for prompt in prompts:
-         payload = {
-             "model": model,
-             "prompt": prompt,
-             "stream": stream,
-             "num_predict": 100,
-             "top_k": 20,
-             "top_p": 0.9,
-             "temperature":0.7,
-             "stop": ["\n", "user:"],
-             "num_ctx": 4096,
-             "raw": raw,
-             "keep_alive": keep_alive
+          payload = {
+            "model": model,
+            "prompt": prompt,
+            "stream": stream,
+            "options": {
+            "top_p": 0.9,
+            "temperature":0.7,
+            },
+            "max_ctx":32768,
+            "done":done,
+            "raw": raw,
+            "keep_alive": keep_alive
          }
         
          if images:
