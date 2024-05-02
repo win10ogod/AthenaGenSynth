@@ -52,7 +52,7 @@ def generate_data(model, prompts, options=None, images=None, system=None, templa
                 generated_text = data["response"]
                 generated_texts.append(generated_text)
                 if output_json:
-                    json_data.append({"instruction": prompt, "Response": generated_text})
+                    json_data.append({"instruction": prompt, "input": prompt, "output": generated_text})
             else:
                 print("API 響應格式不正確")
         else:
