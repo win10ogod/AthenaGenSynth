@@ -9,7 +9,7 @@ and use a simple script to create a pre-training data set
 # how to use
 Refer to how to use ollama serve to start the api.
 
-Run pythonSynth.py
+Run python Synth.py
 
 Enter the ollama model you want to use.
 
